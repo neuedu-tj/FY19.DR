@@ -16,13 +16,13 @@
         }
 
 
-        #left {
+        #header-a {
             width: 40%;
             height: 50px;
             background-color: #E91E63;
         }
 
-        #right {
+        #header-b {
             width: 60%;
             height: 50px;
             background-color: #2196F3;
@@ -33,8 +33,28 @@
         .inline-block {
             display: inline-block;
         }
+        .border {
+            border: red 1px solid;
+        }
 
+        #center {
+            width: 80%;
+            margin: 0 auto;
+        }
 
+        #center-a {
+
+            width: 19%;
+        }
+
+        #center-b {
+            width:60%;
+        }
+
+        #center-c {
+
+            width: 19%;
+        }
 
 
     </style>
@@ -45,7 +65,13 @@
 
 <div id="container">
 
-    <div id="left" class="inline-block"></div><div id="right" class="inline-block"></div>
+    <div id="header">
+        <div id="header-a" class="inline-block"></div><div id="header-b" class="inline-block"></div>
+    </div>
+
+    <div id="center" class="border">
+        <div id="center-a" class="inline-block border ">A</div><div id="center-b" class="inline-block border">B</div><div id="center-c" class="inline-block border">C</div>
+    </div>
 
 </div>
 
