@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+
+        }
+
+        #menu {
+            height: 100%;
+            width: 200px;
+            position: absolute;
+            background: #2196F3;
+        }
+
+        a {
+            font-family: Verdana;
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+
+            line-height: 40px;
+
+            text-align: center;
+        }
+
+
+        #main {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            background-color: #E91E63;
+
+            transition: all ease-in-out .5s ;
+
+        }
+
+        .move {
+            transform: translate(200px);
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+
+<div id="container">
+
+
+        <div id="menu">
+
+            <ul>
+                <li><a href="#"><b>Tasks</b></a></li>
+
+                <li><a href="#"><b>Messages</b></a></li>
+
+                <li><a href="#"><b>New Post</b></a></li>
+
+                <li><a href="#"><b>Settings</b></a></li>
+
+                <li><a href="#"><b>Starred</b></a></li>
+
+                <li><a href="#"><b>Logout</b></a></li>
+            </ul>
+            
+        </div>
+
+        <div id="main" >
+            <input id="btn" type="button" value="Click Me">
+        </div>
+
+
+</div>
+
+</body>
+</html>
+
+<script src="../../resources/js/jquery/jquery.js"></script>
+
+<script>
+
+
+    $(function(){
+
+        $("#btn").click(function(){
+            $("#main").toggleClass("move");
+        })
+
+
+
+    })
+
+</script>

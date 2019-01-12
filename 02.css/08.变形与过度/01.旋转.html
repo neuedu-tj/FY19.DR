@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        #container {
+            height: 100px;
+            width: 100px;
+            overflow: hidden;
+        }
+        #sub-div {
+            height: 100px;
+            width: 100px;
+            background-color: #2196F3;
+
+            transition: all 2s ease-in-out 1s;
+
+        }
+
+
+        #container:hover #sub-div {
+            transform: rotate(45deg);
+            background-color: #E91E63;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="container">
+        <div id="sub-div"></div>
+    </div>
+
+</body>
+</html>

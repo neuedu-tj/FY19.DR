@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        #container {
+            height: 100px;
+            width: 100px;
+            background-color: #E64A19;
+        }
+
+        @keyframes move  {
+            25% {
+                transform: translate(100px , 0px);
+                width: 200px;
+            }
+            50% {
+                transform: translate(100px ,100px);
+                background-color: #2196F3;
+            }
+            75% {
+                transform: translate(0px , 100px);
+
+            }
+            100% {
+                transform: translate(0px ,0px);
+                background-color: #4d4d4d;
+                width: 100px;
+            }
+        }
+
+        #container:hover {
+            animation: move 6s linear;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+    <div id="container"></div>
+
+</body>
+</html>
