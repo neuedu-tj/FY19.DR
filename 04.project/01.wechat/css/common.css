@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 微软雅黑;
+}
+
+.border {
+    border: red 1px solid;
+}
+
+.xy-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+

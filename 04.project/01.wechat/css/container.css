@@ -1,0 +1,10 @@
+#container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    /*background-color: #ffcdd2;*/
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
