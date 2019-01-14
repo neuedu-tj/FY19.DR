@@ -29,6 +29,10 @@
 #signal_right {
     flex: 1;
     height: 36px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 
@@ -84,6 +88,62 @@
     height: 16px;
 }
 
+
+#battery_area {
+    height: 36px;
+    width: 70px;
+    margin-right: 4px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#battery_body {
+    height: 12px;
+    width: 32px;
+    border: white 1px solid;
+    border-radius: 1px;
+}
+
+#battery_header {
+    height: 6px;
+    width: 2px;
+    background-color: white;
+
+    border-radius: 0 1px 1px 0;
+}
+
+#battery_core {
+    height: 10px;
+    width: 16px;
+    background-color: red;
+    margin: 1px;
+
+    animation: charge 5s linear infinite;
+}
+
+
+@keyframes charge {
+    0% {
+        background-color: red;
+        width: 1px;
+    }
+
+    20% {
+        background-color: yellow;
+        width: 7px;
+    }
+
+    80% {
+        background-color: green;
+        width : 26px;
+    }
+    100% {
+        background-color: green;
+        width : 30px;
+    }
+}
 
 
 
