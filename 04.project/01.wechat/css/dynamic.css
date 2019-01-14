@@ -1,5 +1,111 @@
 #dynamic {
     /*height: 400px;*/
     flex: 1;
-    background-color: #E64A19;
+    background-color: #EEEEEE;
+
+    overflow: scroll;
 }
+
+
+#search_area {
+    height: 50px;
+}
+
+#search {
+    width: 98%;
+    height: 30px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#search div {
+    width: 40px;
+    height: 30px;
+}
+
+
+
+
+
+
+/*************************  聊天区域 : start  **************/
+
+.chat {
+
+    height: 67px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /*border-bottom: 1px solid grey;*/
+
+}
+
+.chat-img {
+    height: 56px;
+    width: 56px;
+    margin-left: 4px;
+    border-radius: 4px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.chat-main {
+
+    flex: 1;
+    height: 56px;
+    margin-right: 4px;
+    margin-left: 6px;
+;}
+
+
+.chat-main-up {
+
+    height: 28px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-nickname {
+    flex: 1;
+}
+
+.chat-time {
+    width: 70px;
+    text-align: right;
+    color: grey;
+    font-size: 12px;
+}
+
+.chat-main-down {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.chat-content {
+    flex: 1;
+    color: gray;
+    font-size: 14px;
+    line-height: 28px;
+}
+.mute {
+    width: 70px;
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+

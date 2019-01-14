@@ -1,4 +1,44 @@
 #title {
     height: 50px;
-    background-color: #2196F3;
+    background-color: #313131;
+
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#title_left {
+    height: 50px;
+    width: 50px;
+}
+
+#title_center {
+    flex: 1;
+    font-size: 20px;
+}
+
+#title_right {
+    height: 50px;
+    width: 50px;
+    background-image: url(../img/small/add.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+
+    position: relative;
+}
+
+#title_menu {
+
+    display: none;
+
+    height: 160px;
+    width: 120px;
+    background-color: #313131;
+
+    position: absolute;
+    right: 10px;
+    top: 60px;
+
 }
