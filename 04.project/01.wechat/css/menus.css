@@ -1,5 +1,16 @@
 
 #menus {
     height: 50px;
-    background-color: aquamarine;
+    /*background-color: aquamarine;*/
+
+    display: flex;
+
+    justify-content: space-between;
+
 }
+
+#menus div {
+    height: 50px;
+    flex: 1;
+}
+

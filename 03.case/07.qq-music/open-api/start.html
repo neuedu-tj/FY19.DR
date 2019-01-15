@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+   <meta name="qqmusic-set" content="share=0">
+    <meta itemprop="name" content="标题:必填 长度至少为1" />
+    <meta itemprop="description" content="摘要:必填 长度至少为1" />
+    <meta itemprop="image" content="图片地址:可不填" />
+
+    <title>Title</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            background-color: #414141;
+
+            height: 90px;
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+
+            border-radius: 10px;
+
+            color: white;
+            font-family: 微软雅黑;
+            font-size: 14px;
+        }
+
+        #process {
+            height: 90px;
+            flex: 1;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #control {
+            height: 90px;
+            width: 260px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #control div {
+            width: 60px;
+            height: 90px;
+            /*background-color: #ffcdd2;*/
+        }
+        #control div:active {
+            /*transform: ;*/
+        }
+
+        .border {
+            border: 1px crimson solid;
+        }
+
+        .bgimg-center{
+            background-repeat: no-repeat;
+            background-size: 50%;
+            background-position: center;
+        }
+
+        #time-line {
+            position: relative;
+            background-color: gray;
+            flex: 1;
+            height: 10px;
+            border-radius: 4px;
+        }
+
+        #current_time {
+            width: 50px;
+            margin-left: 6px;
+        }
+        #end_time {
+            margin-left: 4px;
+            width: 50px;
+        }
+
+        #point {
+            position: absolute;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            box-shadow: 0 0 2px grey;
+            background-color: white;
+            top: -3px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+    <div id="container">
+
+
+
+        <div id="control" class="">
+            <div id="play" class="bgimg-center" style="background-image: url(img/control/play.svg)"></div>
+            <div id="pause" class="bgimg-center" style="background-image: url(img/control/pause.svg)"></div>
+            <div id="pre" class="bgimg-center" style="background-image: url(img/control/pre.svg)"></div>
+            <div id="next" class="bgimg-center" style="background-image: url(img/control/next.svg)"></div>
+        </div>
+
+        <div id="process" class="">
+            <div id="current_time">02:15</div>
+            <div id="time-line">
+                <div id="point"></div>
+            </div>
+            <div id="end_time">05:12</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+<script src="../../../resources/js/jquery/jquery.js"></script>
+<script src="http://y.gtimg.cn/music/h5/player/player.js?max_age=2592000"></script>
+<script>
+
+    let songs = ["000qeAhg2Lj8sH" , "0033jdQI0aW9OX"];
+
+   $(function(){
+
+
+
+
+       // 初始化播放组件
+       let player = new QMplayer({ target: "auto" }); // 设置 target=music 时会拉起QQ音乐客户端进行播放
+
+       // 监听事件
+       player.on("play", function () {
+
+       });
+
+       // 支持的方法：play、pause、toggle、playReady、on、off
+       // 支持的事件：play、pause、ended、timeupdate、waiting、error
+
+
+
+
+
+       $("#play").click(function(){
+           player.play("000qeAhg2Lj8sH");
+
+       })
+   });
+
+
+</script>
