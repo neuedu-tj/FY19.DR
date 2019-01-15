@@ -81,9 +81,9 @@
             width: 50px;
             margin-left: 6px;
         }
-        #end_time {
-            margin-left: 4px;
+        #duration {
             width: 50px;
+            margin-left:18px;
         }
 
         #point {
@@ -94,6 +94,8 @@
             box-shadow: 0 0 2px grey;
             background-color: white;
             top: -3px;
+            left: -8px;
+
         }
 
     </style>
@@ -114,11 +116,11 @@
         </div>
 
         <div id="process" class="">
-            <div id="current_time">02:15</div>
+            <div id="current_time">00:00</div>
             <div id="time-line">
                 <div id="point"></div>
             </div>
-            <div id="end_time">05:12</div>
+            <div id="duration">00:00</div>
         </div>
 
     </div>
@@ -128,12 +130,15 @@
 <script src="../../../resources/js/jquery/jquery.js"></script>
 <script src="http://y.gtimg.cn/music/h5/player/player.js?max_age=2592000"></script>
 <script>
+    let curr = 198.344853;
+    console.log();
+
 
     let songs = ["000qeAhg2Lj8sH" , "0033jdQI0aW9OX"];
 
    $(function(){
 
-
+       let task;
 
 
        // 初始化播放组件
@@ -142,7 +147,29 @@
        // 监听事件
        player.on("play", function () {
 
+           task = setInterval(function(){
+               let currentTime = Math.floor(player.currentTime/60)+":"+Math.ceil(player.currentTime%60);
+               let duration = Math.floor(player.duration/60)+":"+Math.floor(player.duration%60);
+                $("#current_time").html(currentTime);
+                $("#duration").html(duration);
+
+                let time_line_width = $("#time-line").width();
+
+                // console.log( player.currentTime/player.duration *time_line_width  );
+
+               $("#point").css('left' ,  player.currentTime/player.duration *time_line_width-4+"px" );
+
+            } , 500);
+
+
+
+
        });
+
+       player.on("pause" , function() {
+            clearInterval(task);
+       });
+
 
        // 支持的方法：play、pause、toggle、playReady、on、off
        // 支持的事件：play、pause、ended、timeupdate、waiting、error
@@ -152,8 +179,13 @@
 
 
        $("#play").click(function(){
-           player.play("000qeAhg2Lj8sH");
+           player.play("000J9uzi2jx51d");
 
+       });
+
+       $("#pause").click(function(){
+           player.pause();
+           console.log(player.data)
        })
    });
 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        .item {
+            border-radius: 6px;
+            text-indent: 10px;
+            margin-top: 10px;
+            height: 40px;
+            width: 200px;
+            background-color: mediumaquamarine;
+            line-height: 40px;
+            font-size: 16px;
+            font-family: "微软雅黑";
+        }
+    </style>
+
+</head>
+
+<body>
+
+<audio controls="controls" id="player" autoplay="autoplay"></audio>
+<br>
+
+<div id="curr"></div>
+
+<!--<input type="button" value="上一首" />-->
+<input type="button" value="下一首" id="next" />
+
+<hr />
+<div id="list">
+    <div class="item" data-source="music/公路.mp3">公路</div>
+    <div class="item" data-source="music/双截棍.mp3">双截棍</div>
+    <div class="item" data-source="music/悟空传.mp3">悟空传</div>
+</div>
+
+</body>
+
+</html>
+
+<script type="text/javascript" src="../../resouces/lib/js/jquery-3.3.1.min.js"></script>
+
+<script>
+    $(function() {
+        $(".item").click(function() {
+            $("#player").attr('src', $(this).data("source"));
+            $("#player")[0].play();
+            $("#curr").html($(this).data("source"))
+            $(this).addClass("playing")
+            $(this).prevUntil().removeClass("playing");
+            $(this).nextUntil().removeClass("playing");
+        })
+        /*下一首*/
+        $("#next").click(function() {
+            var target = $(".playing");
+
+            if( target.data("source") == $(".item:last-child").data("source") ) {   //如果当前播放歌曲的路径  = 歌曲列表最后一首的路径  ， 证明当前歌曲是最后一首 .
+
+                $("#player").attr('src', $(".item:first-child").data("source"));
+
+                $(".item:first-child").addClass("playing");
+                target.removeClass("playing")
+            } else {
+                $("#player").attr('src', target.next().data("source"));
+                target.next().addClass("playing");
+                target.removeClass("playing")
+            }
+
+            //开始播放
+            $("#player")[0].play();
+            //并显示当前的歌曲名称
+            $("#curr").html($(".playing").data("source"))
+        })
+    })
+</script>
