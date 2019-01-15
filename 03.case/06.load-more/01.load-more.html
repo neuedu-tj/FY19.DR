@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Verdana";
+        }
+
+        #container {
+            margin: 0 auto;
+            height: 600px;
+            width: 600px;
+            background-color: darkcyan;
+            color: gray;
+
+            
+            overflow: scroll;
+
+        }
+
+
+        .item {
+            margin: 0 auto;margin-top: 10px;
+
+            width: 500px;
+            height: 160px;
+            background-color: lightyellow;
+            border-radius: 2px;
+            
+            display: flex;
+            flex-flow: row;
+        }
+
+        .photo {
+            margin: 10px 0px 0px 0px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .name {
+            height: 40px;
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            
+        }
+        .content {
+
+        }
+
+
+        .border {
+            border : 1px solid red;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h4>Message Box</h4>
+    <hr>
+
+    <div id="container">
+
+        <div class="item">
+            <div class="photo"><img src="img/spring-boot.png" height="60px" width="60px"/> </div>
+            <div class="">
+                <div class="name">Spring-boot</div>
+                <div class="content">xxx</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="photo"><img src="img/spring-boot.png" height="60px" width="60px"/> </div>
+            <div class="">
+                <div class="name">Spring-boot</div>
+                <div class="content">xxx</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="photo"><img src="img/spring-boot.png" height="60px" width="60px"/> </div>
+            <div class="">
+                <div class="name">Spring-boot</div>
+                <div class="content">xxx</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="photo"><img src="img/spring-boot.png" height="60px" width="60px"/> </div>
+            <div class="">
+                <div class="name">Spring-boot</div>
+                <div class="content">xxx</div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
+<script src="../../resources/js/jquery/jquery.js"></script>
+<script src="01.js"> </script>
