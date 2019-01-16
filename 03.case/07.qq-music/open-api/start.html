@@ -99,18 +99,14 @@
         }
 
         #album {
-            height: 200px;
-            width: 200px;
-            border: 1px solid crimson;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        #mask {
+            top: 0px;
+            z-index: -9999;
             height: 100%;
             width: 100%;
-            background-color: white;
+            border: 1px solid crimson;
+            background-size: 100%;
+            background-position: left center;
+            position: fixed;
             filter: blur(15px);
         }
 
@@ -150,9 +146,8 @@
     <div>歌手 : </div>
     <div id="singer"></div>
     <div>专辑 : </div>
-    <div id="album">
-        <div id="mask"></div>
-    </div>
+    <div id="album"></div>
+
 
 </body>
 </html>
@@ -162,7 +157,7 @@
 
 <script>
 
-    let songs = ["000qeAhg2Lj8sH" , "0033jdQI0aW9OX"];
+    let songs = ["000qeAhg2Lj8sH" , "0033jdQI0aW9OX" , "003aAYrm3GE0Ac" , "001Qu4I30eVFYb"];
 
    $(function(){
 
@@ -181,7 +176,7 @@
                 $("#duration").html(duration);
 
                 let time_line_width = $("#time-line").width();
-               $("#point").css('left' ,  player.currentTime/player.duration *time_line_width-4+"px" );
+               $("#point").css('left' ,  player.currentTime/player.duration * time_line_width - 4+"px" );
 
             } , 500);
 
@@ -192,8 +187,6 @@
 
            $("#album").css('background-image' , "url(http://imgcache.qq.com/music/photo/album_300/"+(player.data.song.album.id%100)+"/300_albumpic_"+player.data.song.album.id+"_0.jpg");
 
-           console.log("url(http://imgcache.qq.com/music/photo/album_300/"+(player.data.song.album.id%100)+"/300_albumpic_"+player.data.song.album.id+"_0.jpg")
-
        });
 
        player.on("pause" , function() {
@@ -202,7 +195,9 @@
 
 
        $("#play").click(function(){
-           player.play("003aAYrm3GE0Ac");
+           player.play("003v4UL61IYlTY");
+           console.log("+++")
+
        });
 
        $("#pause").click(function(){
