@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            height: 100%;
+            width: 100%;
+            background-color: #2196F3;
+            position: fixed;
+        }
+
+        #main {
+            height: 100%;
+            width: 90%;
+            background-color: #E64A19;
+        }
+
+        #play-panel {
+            z-index: 9999;
+            height: 100%;
+            width: 95%;
+            position: absolute;
+            top : 100%;
+            background-color: lawngreen;
+            transition: all .5s linear;
+        }
+
+        #container:hover  #play-panel {
+            top : 0%;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="container">
+
+        <div id="main"></div>
+
+        <div id="play-panel"></div>
+
+    </div>
+
+</body>
+</html>
