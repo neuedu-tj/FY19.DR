@@ -98,6 +98,22 @@
 
         }
 
+        #album {
+            height: 200px;
+            width: 200px;
+            border: 1px solid crimson;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        #mask {
+            height: 100%;
+            width: 100%;
+            background-color: white;
+            filter: blur(15px);
+        }
+
     </style>
 
 </head>
@@ -134,7 +150,9 @@
     <div>歌手 : </div>
     <div id="singer"></div>
     <div>专辑 : </div>
-    <div id="album"></div>
+    <div id="album">
+        <div id="mask"></div>
+    </div>
 
 </body>
 </html>
@@ -169,7 +187,12 @@
 
             console.log(player.data);
 
-           $("#song").html(player.data.song.title)
+           $("#song").html(player.data.song.title);
+           $("#singer").html(player.data.songs[0].singer[0].name);
+
+           $("#album").css('background-image' , "url(http://imgcache.qq.com/music/photo/album_300/"+(player.data.song.album.id%100)+"/300_albumpic_"+player.data.song.album.id+"_0.jpg");
+
+           console.log("url(http://imgcache.qq.com/music/photo/album_300/"+(player.data.song.album.id%100)+"/300_albumpic_"+player.data.song.album.id+"_0.jpg")
 
        });
 
@@ -178,21 +201,12 @@
        });
 
 
-       // 支持的方法：play、pause、toggle、playReady、on、off
-       // 支持的事件：play、pause、ended、timeupdate、waiting、error
-
-
-
-
-
        $("#play").click(function(){
-           player.play("000J9uzi2jx51d");
-
+           player.play("003aAYrm3GE0Ac");
        });
 
        $("#pause").click(function(){
            player.pause();
-           // console.log(player.data)
        })
    });
 
