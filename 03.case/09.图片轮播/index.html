@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		<meta charset="UTF-8">
+    <title></title>
+
+    <style>
+
+        #img {
+            height: 200px;
+            width: 200px;
+            border: 1px solid crimson;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div id="img" style="background-image: url(1.jpg)"></div>
+
+</body>
+
+</html>
+
+<script src="jquery.js"></script>
+
+
+<script>
+    let index = 2;
+
+    let task;
+
+    function loadImg() {
+        if (index === 4) index = 1;
+        $("#img").css("background-image", "url(" + index + ".jpg)");
+        index++;
+    }
+
+    $(function(){ //当页面加载时
+
+        task = setInterval("loadImg()" , 1000); //启动定时器
+
+        $("#img").mouseover(function(){ //鼠标经过
+            window.clearInterval(task);
+        });
+
+        $("#img").mouseout(function(){ //鼠标移出
+            task = setInterval("loadImg()", 1000);
+        })
+
+    })
+
+</script>
