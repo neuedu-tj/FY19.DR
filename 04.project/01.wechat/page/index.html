@@ -70,10 +70,13 @@
 
         </div>
 
-        <div id="menus" style="">
+        <div id="menus">
 
-            <div id="chat-history" class="xy-center">聊天</div>
-            <div id="moments" class="xy-center">朋友圈</div>
+            <div id="chat-history" class="menu xy-center" data-normal="../img/icon/menu/chat-normal.svg" data-press="../img/icon/menu/chat-press.svg" data-url="../page/chat.html"></div>
+            <div id="contacts" class="menu xy-center" data-normal="../img/icon/menu/contact-normal.svg" data-press="../img/icon/menu/contact-press.svg"></div>
+            <div id="discover" class="menu xy-center" data-normal="../img/icon/menu/discover-normal.svg" data-press="../img/icon/menu/discover-press.svg" data-url="../page/discover.html"></div>
+            <div id="me" class="menu xy-center" data-normal="../img/icon/menu/me-normal.svg" data-press="../img/icon/menu/me-press.svg"></div>
+
             
         </div>
 
@@ -90,23 +93,34 @@
     $(function(){
 
         $("#title_right").click(function(){
-
             $("#title_menu").toggle(400);
-
         });
 
 
-        $("#dynamic").load("../page/chat-list.html")
+        $("#dynamic").load("../page/chat.html");
 
 
-        $("#chat-history").click(function(){
-            $("#dynamic").load("../page/chat-list.html");
+
+        /*  控制底部图片*/
+        $("#menus div").each(function() {
+            $(this).css('background-image' , 'url('+$(this).data("normal")+')').css('background-size' , '30%');
+            // console.log($(this).data("normal"));
         });
-        $("#moments").click(function(){
-            $("#dynamic").load("../page/moments.html");
-        })
 
+        //当点击每一个
+        $(".menu").click( function() {
 
+            //让所有按钮的背景  再次变为 normal 状态
+            $(".menu").each(function(){
+                $(this).css('background-image' , 'url('+$(this).data("normal")+')');
+            });
+            //让被点击的层切换为  press
+            $(this).css('background-image' , 'url('+$(this).data("press")+')');
+
+            //
+            $("#dynamic").load($(this).data("url"))
+
+        });
 
 
     })

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
     <meta charset="UTF-8">
     <title>Title</title>
 
@@ -14,13 +15,17 @@
         #container {
             height: 100%;
             width: 100%;
-            background-color: #2196F3;
+            /*background-color: #2196F3;*/
             position: fixed;
+
+            left: 0%;
+
+            transition: all .5s;
         }
 
         #main {
             height: 100%;
-            width: 90%;
+            width: 100%;
             background-color: #E64A19;
         }
 
@@ -31,12 +36,19 @@
             position: absolute;
             top : 100%;
             background-color: lawngreen;
-            transition: all .5s linear;
+            transition: all .3s linear;
         }
 
-        #container:hover  #play-panel {
-            top : 0%;
+        #main-left {
+            position: fixed;
+            right: 100%;
+            height: 100%;
+            width: 60%;
+            background-color: #4d4d4d;
+            transition: all .5s;
         }
+
+
 
     </style>
 
@@ -45,7 +57,15 @@
 
     <div id="container">
 
-        <div id="main"></div>
+        <div id="main-left"></div>
+
+        <div id="main">
+
+            <div id="main-play">播放区域</div>
+
+            <div id="call-left">左侧菜单</div>
+
+        </div>
 
         <div id="play-panel"></div>
 
@@ -53,3 +73,26 @@
 
 </body>
 </html>
+
+<script src="../../../resources/js/jquery/jquery.js"></script>
+
+<script>
+
+    $(function(){
+            $("#main-play").click(() => {
+                $("#play-panel").css('top' , '0%');
+            });
+
+
+            $("#play-panel").click(() => {
+                $("#play-panel").css('top' , '100%');
+            });
+
+
+            $("#call-left").click( () => {
+                $("#main-left").css('right' , '40%');
+                $("#container").css('left' , '60%');
+            });
+    })
+
+</script>
