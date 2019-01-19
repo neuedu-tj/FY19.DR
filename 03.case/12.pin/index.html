@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        .container {
+            height: 400px;
+            width: 600px;
+            overflow: scroll;
+
+            display: flex;
+            justify-content: space-around;
+
+            border: #E91E63 1px solid;
+        }
+
+        #left {
+            height: 900px;
+            width: 300px;
+            background-image: linear-gradient(to top , #2196F3 , #E64A19);
+        }
+
+        #right {
+            height: 50px;
+            width: 50px;
+            background-color: #E91E63;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+
+        <div id="left"></div>
+        <div id="right" class="pin"></div>
+
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+<script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<!--<script src="../../resources/js/jquery/jquery.js"></script>-->
+<script src="jquery.pin.js"></script>
+
+<script>
+
+    $(function(){
+        $(".pin").pin({containerSelector: ".container"})
+    })
+
+
+</script>
+
+
